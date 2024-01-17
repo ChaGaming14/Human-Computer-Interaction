@@ -1,0 +1,356 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Project/Maven2/JavaApp/src/main/java/${packagePath}/${mainClassName}.java to edit this template
+ */
+
+package com.mycompany.oop.hci.finals;
+
+/**
+ *
+ * @author eizel
+ */
+import java.awt.*;
+import java.awt.event.*;
+import java.text.*;
+import javax.swing.*;
+
+
+public class OOPHCIFinals{
+    
+    JFrame f;
+    JLabel name, address, zipcode;
+    JTextField tfname, tfaddress, tfzipcode;
+    JLabel LT1, LT2, LT3;
+    JTextArea textarea;
+    JLabel TW1, TW2, TW3;
+    JSpinner MAD, CWD, PDS;
+    JSpinner MP, WP, PP;
+    JLabel LV, LI;
+    JRadioButton Os, TC;
+    ButtonGroup BG = new ButtonGroup();
+    JCheckBox csrc, ccert, csnck;
+    JButton PO, CO, EXT;
+    int subtMAD = 0, subtCWD = 0, subtPDS = 0, iSRC = 0, iCERT = 0, iSNCK = 0;
+    String fsubtMAD, fsubtCWD, fsubtPDS, FIsrc, FIcert, FIsnck;
+    String vat = "", sales = "", venue = "", answer = "";
+    int outside = 0;
+    double Tvat = 0, Tamount = 0;
+    
+    
+    public OOPHCIFinals(){
+    
+        f = new JFrame("Bautista, Capilitan, Lumagbas, Tequillo, Yambot");
+        f.setLayout(null);
+        f.setDefaultCloseOperation(f.EXIT_ON_CLOSE);
+        f.getContentPane().setBackground(Color.LIGHT_GRAY);
+        f.setSize(new Dimension(980,600));
+        f.setResizable(false);
+        f.setLocationRelativeTo(null);
+        
+        
+        name = new JLabel("Customer Name: ");
+        f.add(name);
+        name.setBounds(30,35,100,25);
+        
+        
+        address = new JLabel("Address: ");
+        f.add(address);
+        address.setBounds(30,85,100,25);
+        
+        
+        zipcode = new JLabel("ZIP Code: ");
+        f.add(zipcode);
+        zipcode.setBounds(30,135,100,25);
+        
+        
+        tfname = new JTextField();
+        f.add(tfname);
+        tfname.setBounds(140,35,470,25);
+        
+        
+        tfaddress = new JTextField();
+        f.add(tfaddress);
+        tfaddress.setBounds(140,85,470,25);
+        
+        
+        tfzipcode = new JTextField();
+        f.add(tfzipcode);
+        tfzipcode.setBounds(140,135,470,25);
+        
+        
+        LT1 = new JLabel("Training | Workshop");
+        f.add(LT1);
+        LT1.setFont(new Font("Arial", Font.BOLD, 16));
+        LT1.setBounds(30,200,170,25);
+        
+        
+        LT2 = new JLabel("No. of Students");
+        f.add(LT2);
+        LT2.setFont(new Font("Arial", Font.BOLD, 16));
+        LT2.setBounds(250,200,170,25);       
+        
+        
+        LT3 = new JLabel("No. of Professional");
+        f.add(LT3);
+        LT3.setFont(new Font("Arial", Font.BOLD, 16));
+        LT3.setBounds(420,200,150,25);
+        
+        
+        textarea = new JTextArea();
+        f.add(textarea);
+        textarea.setBounds(650,35,300,480);
+        textarea.setEditable(false);
+        textarea.setWrapStyleWord(true);
+        textarea.setLineWrap(true);
+        
+        
+        TW1 = new JLabel("Mobile App Development");
+        f.add(TW1);
+        TW1.setBounds(40,250,145,25);
+        
+        
+        TW2 = new JLabel("Creative Web Design");
+        f.add(TW2);
+        TW2.setBounds(40,300,145,25);
+        
+        
+        TW3 = new JLabel("R Programming for Data Science");
+        f.add(TW3);
+        TW3.setBounds(40,350,190,25);
+        
+        
+        MAD = new JSpinner();
+        f.add(MAD);
+        MAD.setBounds(290,250,30,25);
+        
+        
+        CWD = new JSpinner();
+        f.add(CWD);
+        CWD.setBounds(290,300,30,25);
+        
+        
+        PDS = new JSpinner();
+        f.add(PDS);
+        PDS.setBounds(290,350,30,25);
+        
+        
+        PP = new JSpinner();
+        f.add(PP);
+        PP.setBounds(470,350,30,25);
+        
+        
+        WP = new JSpinner();
+        f.add(WP);
+        WP.setBounds(470,300,30,25);
+        
+        
+        MP = new JSpinner();
+        f.add(MP);
+        MP.setBounds(470,250,30,25);
+        
+        
+        LV = new JLabel("Venue: ");
+        f.add(LV);
+        LV.setBounds(50,410,50,25);
+        
+        
+        LI = new JLabel("Inclusion: ");
+        f.add(LI);
+        LI.setBounds(40,450,100,25);
+        
+        
+        Os = new JRadioButton("Outside ");
+        f.add(Os);
+        Os.setBackground(Color.LIGHT_GRAY);
+        Os.setBounds(160,410,100,25);
+        BG.add(Os);
+        
+        TC = new JRadioButton("Training Center ");
+        f.add(TC);
+        TC.setBackground(Color.LIGHT_GRAY);
+        TC.setBounds(270,410,120,25);
+        BG.add(TC);
+
+        
+        
+        csrc = new JCheckBox("Source Code");
+        f.add(csrc);
+        csrc.setBackground(Color.LIGHT_GRAY);
+        csrc.setSize(100, 25);
+        csrc.setLocation(160, 450);
+        
+        
+        ccert = new JCheckBox("Certificate");
+        f.add(ccert);
+        ccert.setBackground(Color.LIGHT_GRAY);
+        ccert.setSize(100, 25);
+        ccert.setLocation(275, 450);
+        
+        
+        csnck = new JCheckBox("Snack");
+        f.add(csnck);
+        csnck.setBackground(Color.LIGHT_GRAY);
+        csnck.setSize(100, 25);
+        csnck.setLocation(370, 450);
+        
+        
+        PO = new JButton("Process Order");
+        f.add(PO);
+        PO.setSize(120,25);
+        PO.setLocation(190, 500);
+        
+        
+        CO = new JButton("Clear Order");
+        f.add(CO);
+        CO.setSize(110,25);
+        CO.setLocation(320, 500);
+        
+        
+        EXT = new JButton("Exit");
+        f.add(EXT);
+        EXT.setSize(60,25);
+        EXT.setLocation(440, 500);
+        
+        
+        f.setVisible(true);
+        PO.addActionListener(new process());
+        CO.addActionListener(new clear());
+        EXT.addActionListener(new exit());
+        
+    }
+    class process implements ActionListener {
+
+    public void actionPerformed(ActionEvent event) {
+        
+        String container = "";
+        container = tfname.getText();
+
+        if (!container.equals("")) {
+            container = container.substring(0, 2).toUpperCase();
+        }
+
+        if (Os.isSelected()) {
+            venue = "Outside";
+            outside = 1000;
+        } else {
+            venue = "Training Center";
+        }
+
+        compute();
+
+        
+        String invoiceText = " Invoice Number: " + container + tfzipcode.getText() + "\n\n Name: " + tfname.getText()
+                + "\n Address: " + tfaddress.getText() + "\n\n Mobile App Development \n No. of Students: "
+                + MAD.getValue() + "\n No. of Professional: " + MP.getValue() + "\n Subtotal: P" + fsubtMAD
+                + "\n\n Creative Web Design \n No. of Students: " + CWD.getValue() + "\n No. of Professional: "
+                + WP.getValue() + "\n Subtotal: P" + fsubtCWD + "\n\n R Programming for Data Science \n No. of Students: "
+                + PDS.getValue() + "\n No. of Professional: " + PP.getValue() + "\n Subtotal: P" + fsubtPDS
+                + "\n\n Inclusion \n Source Code: P" + FIsrc + "\n Certificate: P" + FIcert + "\n Snack: P" + FIsnck
+                + "\n\n Venue: " + "" + venue + " P" + outside + "\n\n Total Sales: P" + sales + "\n 12% VAT: P" + vat
+                + "\n Total Amount: P" + answer;
+
+        
+        textarea.setText(invoiceText);
+    }
+}
+
+    public void compute(){
+        
+        DecimalFormat df1 = new DecimalFormat("#,###.00");                    
+        DecimalFormat df2 = new DecimalFormat("#,###");
+        
+        subtMAD = (Integer.parseInt(MAD.getValue().toString())*3500) 
+                         +(Integer.parseInt(MP.getValue().toString())*4500);
+        fsubtMAD = df2.format(subtMAD);
+        
+        subtCWD = (Integer.parseInt(CWD.getValue().toString())*2500) 
+                         +(Integer.parseInt(WP.getValue().toString())*3000);
+        fsubtCWD = df2.format(subtCWD);
+        
+        subtPDS = (Integer.parseInt(PDS.getValue().toString())*5000) 
+                         +(Integer.parseInt(PP.getValue().toString())*6500);
+        fsubtPDS = df2.format(subtPDS);
+        
+        iSRC = ((Integer.parseInt(MAD.getValue().toString()))+
+                         (Integer.parseInt(MP.getValue().toString()))+
+                         (Integer.parseInt(CWD.getValue().toString()))+
+                         (Integer.parseInt(WP.getValue().toString()))+
+                         (Integer.parseInt(PDS.getValue().toString()))+
+                         (Integer.parseInt(PP.getValue().toString())))*500;
+        FIsrc = df2.format(iSRC);
+        
+        
+        iCERT = ((Integer.parseInt(MAD.getValue().toString()))+
+                         (Integer.parseInt(MP.getValue().toString()))+
+                         (Integer.parseInt(CWD.getValue().toString()))+
+                         (Integer.parseInt(WP.getValue().toString()))+
+                         (Integer.parseInt(PDS.getValue().toString()))+
+                         (Integer.parseInt(PP.getValue().toString())))*50;
+        FIcert = df2.format(iCERT);
+        
+        
+        iSNCK = ((Integer.parseInt(MAD.getValue().toString()))+
+                         (Integer.parseInt(MP.getValue().toString()))+
+                         (Integer.parseInt(CWD.getValue().toString()))+
+                         (Integer.parseInt(WP.getValue().toString()))+
+                         (Integer.parseInt(PDS.getValue().toString()))+
+                         (Integer.parseInt(PP.getValue().toString())))*150;
+        FIsnck = df2.format(iSNCK);
+        
+        
+        Tamount = subtMAD+subtPDS+subtCWD+iCERT+iSNCK+iSRC+outside;        
+        answer = df1.format(Tamount);
+        Tvat = (Tamount)*0.12;
+        vat = df1.format(Tvat);
+        sales = df1.format(Tamount - Tvat);
+        
+    }
+    
+    class clear implements ActionListener{
+        
+        public void actionPerformed(ActionEvent event){
+            
+            tfname.setText("");
+            tfaddress.setText("");
+            tfzipcode.setText("");
+            
+            MAD.setValue(0);
+            MP.setValue(0);
+            CWD.setValue(0);
+            WP.setValue(0);
+            PDS.setValue(0);
+            PP.setValue(0);
+            BG.clearSelection();
+            
+            if(csrc.isSelected()){
+            csrc.doClick();
+            }
+            
+            if(ccert.isSelected()){
+            ccert.doClick();
+            }
+            
+            if(csnck.isSelected()){
+            csnck.doClick();
+            textarea.setText("");
+            }
+            
+        }
+    }
+    
+    class exit implements ActionListener{
+        
+        public void actionPerformed(ActionEvent event){
+            
+            f.dispose();
+        }
+    }
+    
+    
+    public static void main(String[] args) {
+        
+       OOPHCIFinals F = new OOPHCIFinals(); 
+       
+    }
+    
+}

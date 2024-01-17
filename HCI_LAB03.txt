@@ -1,0 +1,14 @@
+package com.mycompany.hci_lab03;
+
+import javax.swing.*;
+
+public class HCI_LAB03 {
+
+    public static void main(String[] args) {
+      String ageText = JOptionPane.showInputDialog(null, "How old are you?");
+      int age = Integer.parseInt(ageText);
+      String moneyText = JOptionPane.showInputDialog(null, "How much money Do you have?");
+      Double money = Double.parseDouble(moneyText);
+      JOptionPane.showMessageDialog(null,"If you can double your money each year, \n" + (money + 31) + "$ at age" + (age + 5));
+    }
+}

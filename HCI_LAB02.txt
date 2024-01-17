@@ -1,0 +1,23 @@
+
+package com.mycompany.hci_lab02;
+
+import javax.swing.*;
+
+public class HCI_LAB02 {
+
+    public static void main(String[] args) {
+      String name ; 
+      int choice ;
+    name =  JOptionPane.showInputDialog(null, "What is your name");
+    choice =  JOptionPane.showConfirmDialog(null, "Do you like cake, Susan?");
+     
+        if (choice==JOptionPane.YES_OPTION){
+            JOptionPane.showMessageDialog(null, "Of course! Who Doesn't");
+            // YES Response From user
+        }
+        else {
+               JOptionPane.showMessageDialog(null,"We'll have to disagree");
+               // choice == NO_OPTION or CANCEL_OPTION
+    }
+}
+}
